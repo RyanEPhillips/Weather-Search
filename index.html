@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="icon" href="radar.png" type="icon/x-icon">
+    <title>Ryan's Weather Station</title>
+</head>
+<body>
+    <h1>Welcome to Ryan's Weather Station</h1>
+    <div class="container1">
+        <p>Please enter your zipcode and click search for current weather in your area.</p>
+        <input id="zip" type="number" min="5" placeholder ="Zipcode"autofocus></input>
+        <button class="search" onclick="getLocation()">Plan my day</button>
+        <make search return api shit from search location></make>
+    </div>
+    <div class="container2">
+        <h2>Current Weather</h2>
+        <div id="weatherResults">
+            <p>Loading .....</p>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
