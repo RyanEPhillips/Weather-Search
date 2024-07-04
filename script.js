@@ -10,11 +10,25 @@ async function getLocation() {
     }
 
     const requesturl = `${weatherAPIurl}?key=${API_KEY}&q=${zipCode}`;
-    const response = await fetch(requesturl)
-    const data = await response.json()
-    displayWeather(data);
-}        
+    try {
+        const response = await fetch(requesturl);
+        if (!response.ok) {
+            throw new Error('Failed to fetch weather data');
+        }
+        const data = await response.json();
+        displayWeather(data);
+    } catch (error) {
+        console.error('Error:', error);
+        displayError('Failed to fetch weather data');
+    }
+}       
 
+document.getElementById('zip').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        getLocation();
+    }
+});    
 function displayWeather(data) {
     const { temp_f, wind_mph, cloud, humidity, } = data.current;
     const city = data.location.name;

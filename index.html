@@ -10,10 +10,11 @@
 <body>
     <h1>Welcome to Ryan's Weather Station</h1>
     <div class="container1">
-        <p>Please enter your zipcode and click search for current weather in your area.</p>
-        <input id="zip" type="number" min="5" placeholder ="Zipcode"autofocus></input>
-        <button class="search" onclick="getLocation()">Plan my day</button>
-        <make search return api shit from search location></make>
+        <form id="weatherForm" onsubmit="return false;">
+            <p>Please enter your zipcode and click search for current weather in your area.</p>
+            <input id="zip" type="number" min="5" placeholder ="Zipcode"autofocus></input>
+            <button class="search" onclick="getLocation()">Plan my day</button>
+        </form>
     </div>
     <div class="container2">
         <h2>Current Weather</h2>
